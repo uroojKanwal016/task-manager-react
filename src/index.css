@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fdf2f8, #e0f2fe, #ecfeff);
+  overflow-x: hidden;
+}
+
+/* 🌸 Animated background blobs */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+}
+
+body::before {
+  background: #fbcfe8;
+  top: -100px;
+  left: -100px;
+  animation: float1 12s infinite ease-in-out;
+}
+
+body::after {
+  background: #93c5fd;
+  bottom: -100px;
+  right: -100px;
+  animation: float2 14s infinite ease-in-out;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(40px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* MAIN CARD */
+.container {
+  width: 420px;
+  margin: 80px auto;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* TITLE */
+h1 {
+  margin-bottom: 5px;
+  color: #0f172a;
+}
+
+/* SUBTEXT */
+p {
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  width: 65%;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  outline: none;
+}
+
+/* BUTTONS */
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* PRIMARY */
+.add-btn {
+  background: linear-gradient(135deg, #ec4899, #6366f1);
+  color: white;
+}
+
+/* FILTER */
+.filter-btn {
+  background: #e2e8f0;
+}
+
+.active {
+  background: linear-gradient(135deg, #ec4899, #6366f1);
+  color: white;
+}
+
+/* TASK */
+.task {
+  background: white;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.task:hover {
+  transform: scale(1.02);
+}
+
+/* DONE */
+.done {
+  background: #f1f5f9;
+  opacity: 0.7;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* TASK LAYOUT */
+.task-left {
+  text-align: left;
+}
+
+.task-text {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.task-date {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+/* HOVER ACTIONS */
+.actions {
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.task:hover .actions {
+  opacity: 1;
+}
+
+/* FADE ANIMATION */
+.fade-out {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: 0.25s ease;
+}
+
+.stats {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 15px;
+}
