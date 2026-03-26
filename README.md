@@ -51,5 +51,5 @@ npm run dev
 
 ## Author
 
-Urooj Kanwal
-front Developer (React)
+Urooj Kanwal-
+frontend Developer (React)
